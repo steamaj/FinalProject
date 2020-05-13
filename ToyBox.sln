@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyBox.Domain", "ToyBox.Domain\ToyBox.Domain.csproj", "{89C25CDF-7EF6-4596-BE46-BEFD4081CC1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyBox.WebUI", "ToyBox.WebUI\ToyBox.WebUI.csproj", "{19BB0A60-E263-4A8E-93BB-A491DDF3F61E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89C25CDF-7EF6-4596-BE46-BEFD4081CC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C25CDF-7EF6-4596-BE46-BEFD4081CC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C25CDF-7EF6-4596-BE46-BEFD4081CC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C25CDF-7EF6-4596-BE46-BEFD4081CC1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BB0A60-E263-4A8E-93BB-A491DDF3F61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BB0A60-E263-4A8E-93BB-A491DDF3F61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BB0A60-E263-4A8E-93BB-A491DDF3F61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BB0A60-E263-4A8E-93BB-A491DDF3F61E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36A92B15-4019-484F-92D8-819002BD56AF}
+	EndGlobalSection
+EndGlobal

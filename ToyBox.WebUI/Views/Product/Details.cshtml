@@ -1,0 +1,55 @@
+﻿@model ToyBox.Domain.Entities.Product
+
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="row" style="border: 2px solid green;">
+    
+    <div class="col-sm-6" style="width: 50%; border: 2px solid blue;">
+        <div class="row" style="width: 100%;">
+            <div class="col-sm-12" style="padding: 5px 5px 5px 5px; ">
+                <img src="https://via.placeholder.com/575x500C/O https://placeholder.com/" class="img-responsive" alt="...">
+            </div>
+        </div>
+        <div class="row" style="width: 100%;">
+            <div class="col-sm-3" style= "padding: 5px 5px 5px 5px;">
+                <img src="https://via.placeholder.com/275x200C/O https://placeholder.com/" class="img-responsive" alt="...">
+            </div>
+            <div class="col-sm-3" style="padding: 5px 5px 5px 5px; ">
+                <img src="https://via.placeholder.com/275x200C/O https://placeholder.com/" class="img-responsive" alt="...">
+            </div>
+            <div class="col-sm-3" style= "padding: 5px 5px 5px 5px; ">
+                <img src="https://via.placeholder.com/275x200C/O https://placeholder.com/" class="img-responsive" alt="...">
+            </div>
+            <div class="col-sm-3" style= "padding: 5px 5px 5px 5px; ">
+                <img src="https://via.placeholder.com/275x200C/O https://placeholder.com/" class="img-responsive" alt="...">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6" style="width: 50%; border: 2px solid yellow;">
+        <h2>@Model.ProductName</h2>
+        <h4>@Model.Price</h4>
+
+        <p>@Model.Description</p>
+        <br />
+        <p>Brand: @Model.Brand</p>
+        <p>Year: @Model.YearOfProduct</p>
+        <p>Condition: @Model.Condition.ConditionName</p>
+        <p>Location: </p>
+        <p>@Model.PostedDate</p>
+        <br />
+        <p>
+            <a href="#" class="btn btn-primary" role="button">Message Seller</a>
+            @Html.ActionLink("Back to List", "List", null, new { @class = "btn btn-default" })
+        </p>
+
+    </div>
+</div>
+
+

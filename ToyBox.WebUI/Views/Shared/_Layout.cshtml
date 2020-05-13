@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @* Link bootstrap style sheet*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <title>@ViewBag.Title </title>
+</head>
+
+<body>
+
+    <!------------------- NAVIGATION BAR ------------------->
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar">@Html.ActionLink("Posted Productss", "Index", "ProductsController2")</span>
+                </button>
+                @Html.ActionLink("TOY BOX", "List", "Product", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <!-- If the user is logged in, it will display the users email-->
+                        <!-- If the user is not logged in, it will display the name Guest-->
+                        @if (Request.IsAuthenticated)
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Html.Encode(User.Identity.Name)<span class="caret"></span></a>
+                        }
+                        else
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Guest<span class="caret"></span></a>
+                        }
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <!-- If the user is logged in, it will display a drop down menu with links to the user profile, posted products, order history,
+        and will change the Login link to Log out-->
+                                <!-- If the user is not logged it it will display a drop down menu with links to the login page and register page -->
+                                @if (Request.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("Profile", "Profile", "Account")
+                                    @Html.ActionLink("Posted Productss", "PostedProducts", "Product")
+                                    <a href="#">Order History</a>
+                                    <br />
+                                    @Html.ActionLink("Log Out", "Logout", "Account")
+                                }
+                                else
+                                {
+
+                                    @Html.ActionLink("Login", "Login", "Account")
+                                }
+                            </li>
+                            <li>
+                                @if (!Request.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("Register", "Register", "Account")
+                                }
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    @* Navigation bar - displays 'Toy Box' title          <li role="separator" class="divider"></li>*@
+
+
+
+
+
+
+    <div class="container">
+
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["message"]
+            </div>
+        }
+
+        @RenderBody()
+
+
+        @* A placeholder - <div> to display body   style="border: 2px solid green;"*@
+        <div class="col-xs-8">
+
+
+        </div>
+    </div>
+</body>
+</html>

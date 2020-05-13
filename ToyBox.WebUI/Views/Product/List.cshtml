@@ -1,0 +1,70 @@
+﻿@model ToyBox.WebUI.Models.ProductsListViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Products";
+}
+
+<div class="row panel">
+    <div class="jumbotron text-center">
+        <h1>Welcome to Toy Box!</h1>
+        <p>Put some text here</p>
+    </div>
+
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <br />
+    @* A panel to list the categories *@
+    <div id="categorys" class="col-xs-3">
+
+        <ul class="list-group">
+            <li class="list-group-item active">Categories</li>
+            <li class="list-group-item">Action Figures</li>
+            <li class="list-group-item">Books and Comics</li>
+            <li class="list-group-item">Building Sets</li>
+            <li class="list-group-item">Cars</li>
+            <li class="list-group-item">Cast Iron Toy</li>
+            <li class="list-group-item">Dolls</li>
+            <li class="list-group-item">Games and Puzzles</li>
+            <li class="list-group-item">Other</li>
+            <li class="list-group-item">Outdoor</li>
+            <li class="list-group-item">Stuffed Animals</li>
+            <li class="list-group-item">Tin Toy</li>
+            <li class="list-group-item">Video Games</li>
+            <li class="list-group-item">Wind-up Toy</li>
+        </ul>
+    </div>
+
+
+    <div class="col-xs-9">
+        @foreach (var p in Model.Products)
+        {
+            //Displays products that are currently marked avaliable 
+            if (p.AvaliableStatus == true)
+            {
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/275x200C/O https://placeholder.com/" alt="...">
+                        <div class="caption">
+                            <h3>@Html.ActionLink(p.ProductName, "Details", new { p.ProductID })</h3>
+                            <p>@p.Description</p>
+                            <h5>@p.Price.ToString("c")</h5>
+                            <p><a href="#" class="btn btn-primary" role="button">Message</a> </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+
+
+
+    </div>
+
+</div>
+
+
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+    </div>
+
